@@ -15,3 +15,13 @@ end
 template "/etc/minidlna.conf" do
   source "minidlna.conf.erb"
 end
+
+# create media directories
+node["minidlna"]["media_dir"].each do |media_dir|
+  dir = media_dir.partition(",").last
+  directory dir do
+    owner "minidlna"
+    group "minidlna"
+    action :create
+  end
+end

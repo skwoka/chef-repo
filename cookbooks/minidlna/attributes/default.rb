@@ -1,4 +1,4 @@
-default['minidlna']['media_dir'] = '/var/lib/minidlna'
+default['minidlna']['media_dir'] = ['/var/lib/minidlna']
 default['minidlna']['port'] = '8200'
 default['minidlna']['serial'] = '12345678'
 default['minidlna']['model_number'] = '1'
